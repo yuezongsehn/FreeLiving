@@ -1,0 +1,6 @@
+platform :ios, '7.0'
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'Masonry', '~> 0.6.1'
+pod 'FMDB', '~> 2.5'
+pod 'Mantle', '~> 2.0.2'
+pod 'LIVBubbleMenu', '~> 1.1.0'

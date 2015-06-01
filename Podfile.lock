@@ -1,0 +1,31 @@
+PODS:
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - LIVBubbleMenu (1.1.0):
+    - pop (~> 1.0.7)
+  - Mantle (2.0.2):
+    - Mantle/extobjc (= 2.0.2)
+  - Mantle/extobjc (2.0.2)
+  - Masonry (0.6.1)
+  - MBProgressHUD (0.9.1)
+  - pop (1.0.7)
+
+DEPENDENCIES:
+  - FMDB (~> 2.5)
+  - LIVBubbleMenu (~> 1.1.0)
+  - Mantle (~> 2.0.2)
+  - Masonry (~> 0.6.1)
+  - MBProgressHUD (~> 0.9.1)
+
+SPEC CHECKSUMS:
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  LIVBubbleMenu: 1bcaa61ac0379e32e88bb40a382f135717276c30
+  Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+
+COCOAPODS: 0.37.1
