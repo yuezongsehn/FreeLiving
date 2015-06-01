@@ -8,7 +8,6 @@
 
 #import "TearedView.h"
 #import "UIImage+SplitImageIntoTwoParts.h"
-#import "Masonry.h"
 #import "AuthenticateObjec.h"
 
 @implementation TearedView

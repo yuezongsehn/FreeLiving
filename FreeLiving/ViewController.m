@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-
-#import "Masonry.h"
+#import "AccountViewController.h"
 
 #define DELAYEXECUTE(delayTime,func) (dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{func;}))
 
@@ -25,9 +24,29 @@
 #pragma mark - LIVBubbleButtonDelegate -
 
 -(void)livBubbleMenu:(LIVBubbleMenu *)bubbleMenu tappedBubbleWithIndex:(NSUInteger)index {
-    NSLog(@"User has selected bubble index: %tu", index);
-    UIViewController *viewController = [[UIViewController alloc] init];
-    [self.navigationController pushViewController:viewController animated:YES];
+    switch (index) {
+        case 0:
+        {
+            AccountViewController *viewController = [[AccountViewController alloc] init];
+            [self.navigationController pushViewController:viewController animated:YES];
+            break;
+        }
+        case 1:
+        {
+            break;
+        }
+        case 2:
+        {
+            break;
+        }
+        case 3:
+        {
+            break;
+        }
+   
+        default:
+            break;
+    }
 }
 
 -(void)livBubbleMenuDidHide:(LIVBubbleMenu *)bubbleMenu {

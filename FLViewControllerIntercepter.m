@@ -33,9 +33,9 @@
     if (self) {
         
         /* 在这里做好方法拦截 */
-        [UIViewController aspect_hookSelector:@selector(loadView) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo>aspectInfo){
-            [self loadView:[aspectInfo instance]];
-        } error:NULL];
+//        [UIViewController aspect_hookSelector:@selector(loadView) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo>aspectInfo){
+//            [self loadView:[aspectInfo instance]];
+//        } error:NULL];
         
 //        [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo> aspectInfo, BOOL animated){
 //            [self viewWillAppear:animated viewController:[aspectInfo instance]];

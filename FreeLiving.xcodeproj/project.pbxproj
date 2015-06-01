@@ -24,6 +24,9 @@
 		5ED23A6E1B195418002AEB74 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED23A6D1B195418002AEB74 /* Aspects.m */; };
 		5ED23A711B1954C4002AEB74 /* FLViewControllerIntercepter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED23A701B1954C4002AEB74 /* FLViewControllerIntercepter.m */; };
 		5ED23A751B19586B002AEB74 /* TearedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED23A741B19586B002AEB74 /* TearedView.m */; };
+		5ED2C79D1B1CAF9C00F1E978 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2C79C1B1CAF9C00F1E978 /* DBManager.m */; };
+		5ED2C7A21B1CB2A100F1E978 /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2C7A11B1CB2A100F1E978 /* AccountModel.m */; };
+		5ED2C7A61B1CB4EE00F1E978 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2C7A51B1CB4EE00F1E978 /* AccountViewController.m */; };
 		5EED308B1B1ABAB300A9F68C /* AuthenticateObjec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EED308A1B1ABAB300A9F68C /* AuthenticateObjec.m */; };
 		5EED30901B1AC46E00A9F68C /* RandomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EED308F1B1AC46E00A9F68C /* RandomObject.m */; };
 /* End PBXBuildFile section */
@@ -65,6 +68,13 @@
 		5ED23A701B1954C4002AEB74 /* FLViewControllerIntercepter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLViewControllerIntercepter.m; sourceTree = "<group>"; };
 		5ED23A731B19586B002AEB74 /* TearedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TearedView.h; sourceTree = "<group>"; };
 		5ED23A741B19586B002AEB74 /* TearedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TearedView.m; sourceTree = "<group>"; };
+		5ED2C79B1B1CAF9C00F1E978 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		5ED2C79C1B1CAF9C00F1E978 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		5ED2C7A01B1CB2A100F1E978 /* AccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountModel.h; sourceTree = "<group>"; };
+		5ED2C7A11B1CB2A100F1E978 /* AccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountModel.m; sourceTree = "<group>"; };
+		5ED2C7A41B1CB4EE00F1E978 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		5ED2C7A51B1CB4EE00F1E978 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		5ED2C7A71B1CB68700F1E978 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5EED30891B1ABAB300A9F68C /* AuthenticateObjec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticateObjec.h; sourceTree = "<group>"; };
 		5EED308A1B1ABAB300A9F68C /* AuthenticateObjec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticateObjec.m; sourceTree = "<group>"; };
 		5EED308E1B1AC46E00A9F68C /* RandomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomObject.h; sourceTree = "<group>"; };
@@ -106,14 +116,15 @@
 			isa = PBXGroup;
 			children = (
 				5EBA2BD61B18B0F70091B65D /* FreeLiving */,
-				5EBA2BF01B18B0F70091B65D /* FreeLivingTests */,
-				5EBA2BD51B18B0F70091B65D /* Products */,
+				5ED2C79E1B1CB26800F1E978 /* DataModel */,
 				5EED30871B1ABA7700A9F68C /* CustomModule */,
 				5ED23A681B19532F002AEB74 /* Categorys */,
 				5ED23A671B195317002AEB74 /* Intercept */,
 				5EBA2BFD1B18B2400091B65D /* Images */,
 				50E14ADE0E656E100A476FF9 /* Pods */,
 				BF683C8E3527C3EE22FCC14C /* Frameworks */,
+				5EBA2BD51B18B0F70091B65D /* Products */,
+				5EBA2BF01B18B0F70091B65D /* FreeLivingTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,8 +145,10 @@
 				5EBA2BDE1B18B0F70091B65D /* ViewController.h */,
 				5EBA2BDF1B18B0F70091B65D /* ViewController.m */,
 				5EBA2BE11B18B0F70091B65D /* Main.storyboard */,
+				5ED2C7A71B1CB68700F1E978 /* PrefixHeader.pch */,
 				5EBA2BE41B18B0F70091B65D /* Images.xcassets */,
 				5EBA2BE61B18B0F70091B65D /* LaunchScreen.xib */,
+				5ED2C7A31B1CB4CB00F1E978 /* AccountVC */,
 				5ED23A721B1957EE002AEB74 /* TearView */,
 				5EBA2BD71B18B0F70091B65D /* Supporting Files */,
 			);
@@ -209,9 +222,45 @@
 			name = TearView;
 			sourceTree = "<group>";
 		};
+		5ED2C79A1B1CAF7D00F1E978 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				5ED2C79B1B1CAF9C00F1E978 /* DBManager.h */,
+				5ED2C79C1B1CAF9C00F1E978 /* DBManager.m */,
+			);
+			name = FMDB;
+			sourceTree = "<group>";
+		};
+		5ED2C79E1B1CB26800F1E978 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5ED2C79F1B1CB28000F1E978 /* Account */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		5ED2C79F1B1CB28000F1E978 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				5ED2C7A01B1CB2A100F1E978 /* AccountModel.h */,
+				5ED2C7A11B1CB2A100F1E978 /* AccountModel.m */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
+		5ED2C7A31B1CB4CB00F1E978 /* AccountVC */ = {
+			isa = PBXGroup;
+			children = (
+				5ED2C7A41B1CB4EE00F1E978 /* AccountViewController.h */,
+				5ED2C7A51B1CB4EE00F1E978 /* AccountViewController.m */,
+			);
+			name = AccountVC;
+			sourceTree = "<group>";
+		};
 		5EED30871B1ABA7700A9F68C /* CustomModule */ = {
 			isa = PBXGroup;
 			children = (
+				5ED2C79A1B1CAF7D00F1E978 /* FMDB */,
 				5EED308C1B1AC44C00A9F68C /* Random */,
 				5EED30881B1ABA9300A9F68C /* Authenticate */,
 			);
@@ -390,9 +439,12 @@
 				5ED23A711B1954C4002AEB74 /* FLViewControllerIntercepter.m in Sources */,
 				5EED30901B1AC46E00A9F68C /* RandomObject.m in Sources */,
 				5EBA2BE01B18B0F70091B65D /* ViewController.m in Sources */,
+				5ED2C7A21B1CB2A100F1E978 /* AccountModel.m in Sources */,
 				5ED23A751B19586B002AEB74 /* TearedView.m in Sources */,
 				5EBA2BDD1B18B0F70091B65D /* AppDelegate.m in Sources */,
 				5EBA2BDA1B18B0F70091B65D /* main.m in Sources */,
+				5ED2C7A61B1CB4EE00F1E978 /* AccountViewController.m in Sources */,
+				5ED2C79D1B1CAF9C00F1E978 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +573,8 @@
 			baseConfigurationReference = 985B3C2FCD62C62CC791EDD5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FreeLiving/PrefixHeader.pch";
 				INFOPLIST_FILE = FreeLiving/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,6 +586,8 @@
 			baseConfigurationReference = B174465890808934599B68C0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/FreeLiving/PrefixHeader.pch";
 				INFOPLIST_FILE = FreeLiving/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

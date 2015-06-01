@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "TearedView.h"
 #import "RandomObject.h"
-#import "Masonry.h"
 #import "ViewController.h"
 
 @interface AppDelegate ()
@@ -23,8 +22,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+//    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     [self showMaskView];
     [self.maskView showAuthenticateAlert];
 
