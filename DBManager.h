@@ -45,12 +45,16 @@
 
 
 /**
- *	@brief	创建所有表
+ *	@brief	创建账号密码表
  *
  *	@return
  */
-+ (BOOL)createTable;
++ (BOOL)createAccount_Table;
 
-+ (BOOL)saveOrUpdataAccountModel:(AccountModel*)aModel;
-
++ (BOOL)saveAccountModel:(AccountModel*)aModel;
++ (NSMutableArray *)getAllAccountModel;
+// 删除某一条数据
++ (BOOL)deleteAccountModel:(NSString *)createTime;
+//更新一条数据
++ (BOOL)updateAccountModel:(AccountModel*)aModel;
 @end

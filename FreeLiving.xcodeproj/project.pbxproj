@@ -29,6 +29,12 @@
 		5ED2C7A61B1CB4EE00F1E978 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2C7A51B1CB4EE00F1E978 /* AccountViewController.m */; };
 		5EED308B1B1ABAB300A9F68C /* AuthenticateObjec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EED308A1B1ABAB300A9F68C /* AuthenticateObjec.m */; };
 		5EED30901B1AC46E00A9F68C /* RandomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EED308F1B1AC46E00A9F68C /* RandomObject.m */; };
+		92A91AAA1B1D62CF00704C66 /* InputText.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AA71B1D62CF00704C66 /* InputText.m */; };
+		92A91AAB1B1D62CF00704C66 /* UIView+XD.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AA91B1D62CF00704C66 /* UIView+XD.m */; };
+		92A91AAE1B1D642000704C66 /* InputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AAD1B1D642000704C66 /* InputTextView.m */; };
+		92A91AB11B1DA12C00704C66 /* AccountDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AB01B1DA12C00704C66 /* AccountDetailViewController.m */; };
+		92A91AB51B1DACCA00704C66 /* DesEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AB41B1DACCA00704C66 /* DesEncrypt.m */; };
+		92A91AB91B1DBC2E00704C66 /* HudFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AB81B1DBC2E00704C66 /* HudFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +85,18 @@
 		5EED308A1B1ABAB300A9F68C /* AuthenticateObjec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticateObjec.m; sourceTree = "<group>"; };
 		5EED308E1B1AC46E00A9F68C /* RandomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomObject.h; sourceTree = "<group>"; };
 		5EED308F1B1AC46E00A9F68C /* RandomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomObject.m; sourceTree = "<group>"; };
+		92A91AA61B1D62CF00704C66 /* InputText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputText.h; sourceTree = "<group>"; };
+		92A91AA71B1D62CF00704C66 /* InputText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputText.m; sourceTree = "<group>"; };
+		92A91AA81B1D62CF00704C66 /* UIView+XD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XD.h"; sourceTree = "<group>"; };
+		92A91AA91B1D62CF00704C66 /* UIView+XD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XD.m"; sourceTree = "<group>"; };
+		92A91AAC1B1D642000704C66 /* InputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTextView.h; sourceTree = "<group>"; };
+		92A91AAD1B1D642000704C66 /* InputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTextView.m; sourceTree = "<group>"; };
+		92A91AAF1B1DA12C00704C66 /* AccountDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountDetailViewController.h; sourceTree = "<group>"; };
+		92A91AB01B1DA12C00704C66 /* AccountDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetailViewController.m; sourceTree = "<group>"; };
+		92A91AB31B1DACC100704C66 /* DesEncrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesEncrypt.h; sourceTree = "<group>"; };
+		92A91AB41B1DACCA00704C66 /* DesEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesEncrypt.m; sourceTree = "<group>"; };
+		92A91AB71B1DBC2E00704C66 /* HudFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudFactory.h; sourceTree = "<group>"; };
+		92A91AB81B1DBC2E00704C66 /* HudFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudFactory.m; sourceTree = "<group>"; };
 		985B3C2FCD62C62CC791EDD5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AB5204D5ECFD7C3065ABDE17 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B174465890808934599B68C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +135,7 @@
 			children = (
 				5EBA2BD61B18B0F70091B65D /* FreeLiving */,
 				5ED2C79E1B1CB26800F1E978 /* DataModel */,
+				92A91AA41B1D625C00704C66 /* CustomViewClass */,
 				5EED30871B1ABA7700A9F68C /* CustomModule */,
 				5ED23A681B19532F002AEB74 /* Categorys */,
 				5ED23A671B195317002AEB74 /* Intercept */,
@@ -149,7 +168,6 @@
 				5EBA2BE41B18B0F70091B65D /* Images.xcassets */,
 				5EBA2BE61B18B0F70091B65D /* LaunchScreen.xib */,
 				5ED2C7A31B1CB4CB00F1E978 /* AccountVC */,
-				5ED23A721B1957EE002AEB74 /* TearView */,
 				5EBA2BD71B18B0F70091B65D /* Supporting Files */,
 			);
 			path = FreeLiving;
@@ -220,6 +238,7 @@
 				5ED23A741B19586B002AEB74 /* TearedView.m */,
 			);
 			name = TearView;
+			path = FreeLiving;
 			sourceTree = "<group>";
 		};
 		5ED2C79A1B1CAF7D00F1E978 /* FMDB */ = {
@@ -253,6 +272,8 @@
 			children = (
 				5ED2C7A41B1CB4EE00F1E978 /* AccountViewController.h */,
 				5ED2C7A51B1CB4EE00F1E978 /* AccountViewController.m */,
+				92A91AAF1B1DA12C00704C66 /* AccountDetailViewController.h */,
+				92A91AB01B1DA12C00704C66 /* AccountDetailViewController.m */,
 			);
 			name = AccountVC;
 			sourceTree = "<group>";
@@ -260,6 +281,7 @@
 		5EED30871B1ABA7700A9F68C /* CustomModule */ = {
 			isa = PBXGroup;
 			children = (
+				92A91AB21B1DACA700704C66 /* DesEncrypt */,
 				5ED2C79A1B1CAF7D00F1E978 /* FMDB */,
 				5EED308C1B1AC44C00A9F68C /* Random */,
 				5EED30881B1ABA9300A9F68C /* Authenticate */,
@@ -283,6 +305,48 @@
 				5EED308F1B1AC46E00A9F68C /* RandomObject.m */,
 			);
 			name = Random;
+			sourceTree = "<group>";
+		};
+		92A91AA41B1D625C00704C66 /* CustomViewClass */ = {
+			isa = PBXGroup;
+			children = (
+				92A91AB61B1DBC1800704C66 /* HudFactory */,
+				5ED23A721B1957EE002AEB74 /* TearView */,
+				92A91AA51B1D628D00704C66 /* InputView */,
+			);
+			name = CustomViewClass;
+			sourceTree = "<group>";
+		};
+		92A91AA51B1D628D00704C66 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				92A91AAC1B1D642000704C66 /* InputTextView.h */,
+				92A91AAD1B1D642000704C66 /* InputTextView.m */,
+				92A91AA61B1D62CF00704C66 /* InputText.h */,
+				92A91AA71B1D62CF00704C66 /* InputText.m */,
+				92A91AA81B1D62CF00704C66 /* UIView+XD.h */,
+				92A91AA91B1D62CF00704C66 /* UIView+XD.m */,
+			);
+			name = InputView;
+			path = FreeLiving;
+			sourceTree = "<group>";
+		};
+		92A91AB21B1DACA700704C66 /* DesEncrypt */ = {
+			isa = PBXGroup;
+			children = (
+				92A91AB31B1DACC100704C66 /* DesEncrypt.h */,
+				92A91AB41B1DACCA00704C66 /* DesEncrypt.m */,
+			);
+			name = DesEncrypt;
+			sourceTree = "<group>";
+		};
+		92A91AB61B1DBC1800704C66 /* HudFactory */ = {
+			isa = PBXGroup;
+			children = (
+				92A91AB71B1DBC2E00704C66 /* HudFactory.h */,
+				92A91AB81B1DBC2E00704C66 /* HudFactory.m */,
+			);
+			name = HudFactory;
 			sourceTree = "<group>";
 		};
 		BF683C8E3527C3EE22FCC14C /* Frameworks */ = {
@@ -434,17 +498,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EED308B1B1ABAB300A9F68C /* AuthenticateObjec.m in Sources */,
+				92A91AB51B1DACCA00704C66 /* DesEncrypt.m in Sources */,
 				5ED23A6E1B195418002AEB74 /* Aspects.m in Sources */,
 				5ED23A6B1B1953D9002AEB74 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
 				5ED23A711B1954C4002AEB74 /* FLViewControllerIntercepter.m in Sources */,
+				92A91AAB1B1D62CF00704C66 /* UIView+XD.m in Sources */,
 				5EED30901B1AC46E00A9F68C /* RandomObject.m in Sources */,
 				5EBA2BE01B18B0F70091B65D /* ViewController.m in Sources */,
+				92A91AB11B1DA12C00704C66 /* AccountDetailViewController.m in Sources */,
 				5ED2C7A21B1CB2A100F1E978 /* AccountModel.m in Sources */,
 				5ED23A751B19586B002AEB74 /* TearedView.m in Sources */,
 				5EBA2BDD1B18B0F70091B65D /* AppDelegate.m in Sources */,
 				5EBA2BDA1B18B0F70091B65D /* main.m in Sources */,
 				5ED2C7A61B1CB4EE00F1E978 /* AccountViewController.m in Sources */,
 				5ED2C79D1B1CAF9C00F1E978 /* DBManager.m in Sources */,
+				92A91AAA1B1D62CF00704C66 /* InputText.m in Sources */,
+				92A91AB91B1DBC2E00704C66 /* HudFactory.m in Sources */,
+				92A91AAE1B1D642000704C66 /* InputTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

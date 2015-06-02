@@ -10,10 +10,11 @@
 
 @interface AccountModel : NSObject
 
+@property (nonatomic, assign) NSInteger accountId;
 @property (nonatomic, strong) NSString *accountString;
 @property (nonatomic, strong) NSString *accountName;
 @property (nonatomic, strong) NSString *accountPassword;
-@property (nonatomic, strong) NSString *creatTime;
+@property (nonatomic, strong) NSString *createTime;
 @property (nonatomic, strong) NSString *isImportant;
 @property (nonatomic, strong) NSString *accountType;
 

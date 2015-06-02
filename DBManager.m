@@ -19,7 +19,86 @@ static FMDatabase *shareDataBase = nil;
     });
     return shareDataBase;
 }
-
+#pragma mark - Account_Table -
+/**
+ 创建表
+ **/
++ (BOOL)createAccount_Table {
+    
+    BOOL result = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        if ([DBManager isTableExist:@"account_table"]) {
+            result = YES;
+        }
+        else
+        {
+            NSString *sql = @"CREATE TABLE account_table (id integer primary key autoincrement,accountstring varchar(64),accountname varchar(128),accountpassword varchar(64),createtime varchar(64),isimportant varchar(2),accounttype varchar(64))";
+            result = [shareDataBase executeUpdate:sql];
+        }
+        [shareDataBase close];
+    }
+    return result;
+}
++ (BOOL)saveAccountModel:(AccountModel*)aModel
+{
+    BOOL isOk = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        isOk = [shareDataBase executeUpdate:
+                @"INSERT INTO account_table(accountstring,accountname,accountpassword,createtime,isimportant,accounttype)VALUES(?,?,?,?,?,?)",aModel.accountString,aModel.accountName,aModel.accountPassword,aModel.createTime,aModel.isImportant,aModel.accountType];
+        aModel.accountId = [shareDataBase lastInsertRowId];
+        [shareDataBase close];
+    }
+    return isOk;
+    
+}
++ (NSMutableArray *)getAllAccountModel
+{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        FMResultSet *s = [shareDataBase executeQuery:@"SELECT * FROM account_table order by id desc"];
+        while ([s next]) {
+            AccountModel *aModel = [[AccountModel alloc] init];
+            aModel.accountId = [s intForColumn:@"id"];
+            aModel.accountString = [s stringForColumn:@"accountstring"];
+            aModel.accountName = [s stringForColumn:@"accountname"];
+            aModel.accountPassword = [s stringForColumn:@"accountpassword"];
+            aModel.isImportant = [s stringForColumn:@"isimportant"];
+            aModel.createTime = [s stringForColumn:@"createtime"];
+            aModel.accountType = [s stringForColumn:@"accounttype"];
+            [array addObject:aModel];
+        }
+        [shareDataBase close];
+    }
+    return array;
+}
+// 删除某一条数据
++ (BOOL)deleteAccountModel:(NSString *)createTime
+{
+    BOOL isOk = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        isOk = [shareDataBase executeUpdate:
+                @"delete from account_table where createtime = ?",createTime];
+        [shareDataBase close];
+    }
+    return isOk;
+}
+//更新一条数据
++ (BOOL)updateAccountModel:(AccountModel*)aModel
+{
+    BOOL isOk = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        isOk = [shareDataBase executeUpdate:
+                @"update account_table set accountpassword = ? where id = ?",aModel.accountPassword,[NSString stringWithFormat:@"%ld",(long)aModel.accountId]];
+        [shareDataBase close];
+    }
+    return isOk;
+}
+#pragma mark -----
 /**
  判断数据库中表是否存在
  **/
@@ -43,39 +122,6 @@ static FMDatabase *shareDataBase = nil;
     }
     
     return NO;
-}
-
-/**
- 创建表
- **/
-+ (BOOL)createAccount_Table {
-    //    debugMethod();
-    NSLog(@"%@",dataBasePath);
-    if (1){
-        {
-            shareDataBase = [DBManager createDataBase];
-            if ([shareDataBase open]) {
-                if (![DBManager isTableExist:@"account_table"]) {
-                    NSString *sql = @"CREATE TABLE account_table (id integer primary key autoincrement,accountstring varchar(64),accountname varchar(128),accountpassword varchar(64),creattime varchar(64),isimportant varchar(2),accounttype varchar(64))";
-                    [shareDataBase executeUpdate:sql];
-                }
-                [shareDataBase close];
-            }
-        }
-    }
-    return YES;
-}
-+ (BOOL)saveOrUpdataAccountModel:(AccountModel*)aModel
-{
-    BOOL isOk = NO;
-    shareDataBase = [DBManager createDataBase];
-    if ([shareDataBase open]) {
-        isOk = [shareDataBase executeUpdate:
-                @"INSERT INTO account_table(accountstring,accountname,accountpassword,creatTime,isimportant,accounttype)VALUES(?,?,?,?,?,?)",aModel.accountString,aModel.accountName,aModel.accountPassword,aModel.creatTime,aModel.isImportant,aModel.accountType];
-        [shareDataBase close];
-    }
-    return isOk;
-
 }
 /**
  关闭数据库
