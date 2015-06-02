@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		386626763056F067866D8310 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB5204D5ECFD7C3065ABDE17 /* libPods.a */; };
+		5EA1EB2A1B1DF7AF003A2F0B /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1EB291B1DF7AF003A2F0B /* PasswordViewController.m */; };
+		5EA1EB2E1B1DFB8B003A2F0B /* APRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA1EB2D1B1DFB8B003A2F0B /* APRoundedButton.m */; };
 		5EBA2BDA1B18B0F70091B65D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA2BD91B18B0F70091B65D /* main.m */; };
 		5EBA2BDD1B18B0F70091B65D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA2BDC1B18B0F70091B65D /* AppDelegate.m */; };
 		5EBA2BE01B18B0F70091B65D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA2BDF1B18B0F70091B65D /* ViewController.m */; };
@@ -48,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EA1EB281B1DF7AF003A2F0B /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		5EA1EB291B1DF7AF003A2F0B /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		5EA1EB2C1B1DFB8B003A2F0B /* APRoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRoundedButton.h; sourceTree = "<group>"; };
+		5EA1EB2D1B1DFB8B003A2F0B /* APRoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRoundedButton.m; sourceTree = "<group>"; };
 		5EBA2BD41B18B0F70091B65D /* FreeLiving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeLiving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBA2BD81B18B0F70091B65D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EBA2BD91B18B0F70091B65D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -130,6 +136,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5EA1EB271B1DF778003A2F0B /* CreatePassword */ = {
+			isa = PBXGroup;
+			children = (
+				5EA1EB281B1DF7AF003A2F0B /* PasswordViewController.h */,
+				5EA1EB291B1DF7AF003A2F0B /* PasswordViewController.m */,
+			);
+			name = CreatePassword;
+			sourceTree = "<group>";
+		};
+		5EA1EB2B1B1DFB75003A2F0B /* RoundedButton */ = {
+			isa = PBXGroup;
+			children = (
+				5EA1EB2C1B1DFB8B003A2F0B /* APRoundedButton.h */,
+				5EA1EB2D1B1DFB8B003A2F0B /* APRoundedButton.m */,
+			);
+			name = RoundedButton;
+			sourceTree = "<group>";
+		};
 		5EBA2BCB1B18B0F70091B65D = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +191,7 @@
 				5ED2C7A71B1CB68700F1E978 /* PrefixHeader.pch */,
 				5EBA2BE41B18B0F70091B65D /* Images.xcassets */,
 				5EBA2BE61B18B0F70091B65D /* LaunchScreen.xib */,
+				5EA1EB271B1DF778003A2F0B /* CreatePassword */,
 				5ED2C7A31B1CB4CB00F1E978 /* AccountVC */,
 				5EBA2BD71B18B0F70091B65D /* Supporting Files */,
 			);
@@ -310,6 +335,7 @@
 		92A91AA41B1D625C00704C66 /* CustomViewClass */ = {
 			isa = PBXGroup;
 			children = (
+				5EA1EB2B1B1DFB75003A2F0B /* RoundedButton */,
 				92A91AB61B1DBC1800704C66 /* HudFactory */,
 				5ED23A721B1957EE002AEB74 /* TearView */,
 				92A91AA51B1D628D00704C66 /* InputView */,
@@ -508,8 +534,10 @@
 				92A91AB11B1DA12C00704C66 /* AccountDetailViewController.m in Sources */,
 				5ED2C7A21B1CB2A100F1E978 /* AccountModel.m in Sources */,
 				5ED23A751B19586B002AEB74 /* TearedView.m in Sources */,
+				5EA1EB2A1B1DF7AF003A2F0B /* PasswordViewController.m in Sources */,
 				5EBA2BDD1B18B0F70091B65D /* AppDelegate.m in Sources */,
 				5EBA2BDA1B18B0F70091B65D /* main.m in Sources */,
+				5EA1EB2E1B1DFB8B003A2F0B /* APRoundedButton.m in Sources */,
 				5ED2C7A61B1CB4EE00F1E978 /* AccountViewController.m in Sources */,
 				5ED2C79D1B1CAF9C00F1E978 /* DBManager.m in Sources */,
 				92A91AAA1B1D62CF00704C66 /* InputText.m in Sources */,

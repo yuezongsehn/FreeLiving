@@ -106,6 +106,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.searchController.active) {
+        self.searchController.active = NO;
+    }
     AccountModel *aModel = nil;
     if (self.searchController.active) {
         aModel = self.searchList[indexPath.row];
@@ -116,6 +119,7 @@
     AccountDetailViewController *detailVC = [[AccountDetailViewController alloc] init];
     detailVC.detailModel = aModel;
     [self.navigationController pushViewController:detailVC animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 #pragma mark -UIActionSheetDelegate-
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -152,7 +156,6 @@
     
     [self.tableView reloadData];
 }
-
 #pragma mark -getters and setters-
 - (UITableView *)tableView
 {
@@ -172,7 +175,6 @@
         _searchController.searchResultsUpdater = self;
         
         _searchController.dimsBackgroundDuringPresentation = NO;
-        
         _searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
         _searchController.searchBar.placeholder = @"输入账号";
         self.tableView.tableHeaderView = _searchController.searchBar;

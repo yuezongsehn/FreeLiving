@@ -12,12 +12,12 @@
 @interface InputTextView : UIView<UITextFieldDelegate>
 
 @property (nonatomic, strong) UIView *inputBgView;
-@property (nonatomic, weak) UITextField *nameText;
-@property (nonatomic, weak) UILabel *nameTextName;
-@property (nonatomic, weak) UITextField *accountText;
-@property (nonatomic, weak) UILabel *accountTextName;
-@property (nonatomic, weak) UITextField *passwordText;
-@property (nonatomic, weak) UILabel *passwordTextName;
+@property (nonatomic, strong) UITextField *nameText;
+@property (nonatomic, strong) UILabel *nameTextName;
+@property (nonatomic, strong) UITextField *accountText;
+@property (nonatomic, strong) UILabel *accountTextName;
+@property (nonatomic, strong) UITextField *passwordText;
+@property (nonatomic, strong) UILabel *passwordTextName;
 @property (nonatomic, strong) UIButton *saveBtn;
 @property (nonatomic, strong) UIButton *starBtn;
 @property (nonatomic, assign) BOOL chang;

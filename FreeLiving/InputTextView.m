@@ -155,7 +155,7 @@
 {
     if (_starBtn == nil) {
         _starBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 30)];
-        _starBtn.center = CGPointMake(50, CGRectGetMinY(_saveBtn.frame));
+        _starBtn.center = CGPointMake(26, CGRectGetMidY(_saveBtn.frame));
         [_starBtn setImage:[UIImage imageNamed:@"star_gray"] forState:UIControlStateNormal];
         [_starBtn setImage:[UIImage imageNamed:@"star_orange"] forState:UIControlStateSelected];
         [_starBtn addTarget:self action:@selector(starBtnClick:) forControlEvents:UIControlEventTouchUpInside];

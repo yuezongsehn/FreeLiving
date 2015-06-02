@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AccountViewController.h"
+#import "PasswordViewController.h"
 
 #define DELAYEXECUTE(delayTime,func) (dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{func;}))
 
@@ -33,6 +34,8 @@
         }
         case 1:
         {
+            PasswordViewController *passwordVC = [[PasswordViewController alloc] init];
+            [self.navigationController pushViewController:passwordVC animated:YES];
             break;
         }
         case 2:
