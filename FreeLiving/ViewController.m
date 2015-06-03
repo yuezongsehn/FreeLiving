@@ -52,15 +52,21 @@
 - (void)removeBubbleMenuView
 {
     if (_bubbleMenu) {
+        [self.bubbleMenu.backgroundView removeFromSuperview];
+        self.bubbleMenu.backgroundView = nil;
         [self.bubbleMenu removeFromSuperview];
         _bubbleMenu = nil;
     }
 }
+- (void)showBubbleMenuView
+{
+    [self removeBubbleMenuView];
+    [self.bubbleMenu show];
+}
 #pragma mark -private methods-
 
 - (IBAction)popBtnAction:(id)sender {
-    [self removeBubbleMenuView];
-    [self.bubbleMenu show];
+    [self showBubbleMenuView];
 }
 
 #pragma mark -getters and setters-

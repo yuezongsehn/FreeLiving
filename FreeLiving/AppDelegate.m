@@ -37,8 +37,14 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-        NSLog(@"%s",__func__);
+//        NSLog(@"%s",__func__);
     [self showMaskView];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"IsLogin"]) {
+        UINavigationController *na = (UINavigationController *)self.window.rootViewController;
+        ViewController *viewC = (ViewController *)na.viewControllers[0];
+        [viewC removeBubbleMenuView];
+    }
+
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
@@ -90,7 +96,7 @@
                 UINavigationController *na = (UINavigationController *)weakSelf.window.rootViewController;
                 if ([na.visibleViewController isKindOfClass:[ViewController class]]) {
                     ViewController *viewC = (ViewController *)na.visibleViewController;
-                    [viewC.bubbleMenu show];
+                    [viewC showBubbleMenuView];
                 }
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"IsLogin"];
 

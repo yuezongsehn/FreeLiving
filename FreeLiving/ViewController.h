@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSArray* images;
 
 - (void)removeBubbleMenuView;
+- (void)showBubbleMenuView;
 @end
 
