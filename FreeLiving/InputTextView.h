@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AccountModel.h"
 
 @interface InputTextView : UIView<UITextFieldDelegate>
 
@@ -21,8 +20,10 @@
 @property (nonatomic, strong) UIButton *saveBtn;
 @property (nonatomic, strong) UIButton *starBtn;
 @property (nonatomic, assign) BOOL chang;
+@property (nonatomic, assign) NSInteger inputStyle;
 @property (nonatomic, copy) void(^removeInputViewAcion)(void);
-@property (nonatomic, copy) void(^addAccountModelAction)(AccountModel *);
+@property (nonatomic, copy) void(^addAccountModelAction)(id);
 
+- (instancetype)initWithFrame:(CGRect)frame inputStyle:(NSInteger)style;
 - (void)createInputView;
 @end

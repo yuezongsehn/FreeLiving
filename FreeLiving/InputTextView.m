@@ -9,8 +9,19 @@
 #import "InputTextView.h"
 #import "InputText.h"
 #import "DesEncrypt.h"
+#import "AccountModel.h"
+#import "ConsumeModel.h"
 
 @implementation InputTextView
+
+- (instancetype)initWithFrame:(CGRect)frame inputStyle:(NSInteger)style
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.inputStyle = style;
+    }
+    return self;
+}
 
 - (void)createInputView
 {
@@ -61,6 +72,17 @@
     [self.inputBgView addSubview:self.passwordTextName];
     [self.inputBgView addSubview:self.saveBtn];
     [self.inputBgView addSubview:self.starBtn];
+    
+    if (self.inputStyle) {
+        [self.passwordText removeFromSuperview];
+        self.passwordText = nil;
+        [self.passwordTextName removeFromSuperview];
+        self.passwordTextName = nil;
+        self.nameTextName.text = @"描述";
+        self.accountTextName.text = @"金额";
+        
+        self.accountText.keyboardType = UIKeyboardTypeNumberPad;
+    }
 }
 
 - (UILabel *)setupTextName:(NSString *)textName frame:(CGRect)frame
@@ -218,12 +240,24 @@
 }
 - (void)textFieldDidChange
 {
-    if (self.nameText.text.length != 0 && self.accountText.text.length != 0 && self.passwordText.text.length != 0) {
-        [self.saveBtn setBackgroundColor:[UIColor orangeColor]];
-        self.saveBtn.enabled = YES;
-    } else {
-        [self.saveBtn setBackgroundColor:[UIColor lightGrayColor]];
-        self.saveBtn.enabled = NO;
+    if (self.inputStyle) {
+        if (self.nameText.text.length != 0 && self.accountText.text.length != 0) {
+            [self.saveBtn setBackgroundColor:[UIColor orangeColor]];
+            self.saveBtn.enabled = YES;
+        } else {
+            [self.saveBtn setBackgroundColor:[UIColor lightGrayColor]];
+            self.saveBtn.enabled = NO;
+        }
+    }
+    else
+    {
+        if (self.nameText.text.length != 0 && self.accountText.text.length != 0 && self.passwordText.text.length != 0) {
+            [self.saveBtn setBackgroundColor:[UIColor orangeColor]];
+            self.saveBtn.enabled = YES;
+        } else {
+            [self.saveBtn setBackgroundColor:[UIColor lightGrayColor]];
+            self.saveBtn.enabled = NO;
+        }
     }
 }
 #pragma mark - touchesBegan -
@@ -245,18 +279,39 @@
 - (void)saveBtnClick
 {
     [self inputBgViewAnimation];
-    AccountModel *aModel = [[AccountModel alloc] init];
-    aModel.accountString = self.nameText.text;
-    aModel.accountName = self.accountText.text;
-    aModel.accountPassword  = [DesEncrypt base64StringFromText:self.passwordText.text];
-    aModel.createTime = [self getCurrentTime];
-    if (_starBtn.selected) {
-        aModel.isImportant = @"1";
+    if (self.inputStyle) {
+        ConsumeModel *aModel = [[ConsumeModel alloc] init];
+        aModel.consumeDes = self.nameText.text;
+        if (self.inputStyle == 2) {
+            aModel.consumeAmount = [NSString stringWithFormat:@"-%@",self.accountText.text];
+        }
+        else
+        aModel.consumeAmount = self.accountText.text;
+        aModel.consumeTime = [self getCurrentTime];
+        if (_starBtn.selected) {
+            aModel.isImportant = @"1";
+        }
+        else
+            aModel.isImportant = @"0";
+        if (self.addAccountModelAction) {
+            self.addAccountModelAction(aModel);
+        }
     }
     else
-        aModel.isImportant = @"0";
-    if (self.addAccountModelAction) {
-        self.addAccountModelAction(aModel);
+    {
+        AccountModel *aModel = [[AccountModel alloc] init];
+        aModel.accountString = self.nameText.text;
+        aModel.accountName = self.accountText.text;
+        aModel.accountPassword  = [DesEncrypt base64StringFromText:self.passwordText.text];
+        aModel.createTime = [self getCurrentTime];
+        if (_starBtn.selected) {
+            aModel.isImportant = @"1";
+        }
+        else
+            aModel.isImportant = @"0";
+        if (self.addAccountModelAction) {
+            self.addAccountModelAction(aModel);
+        }
     }
 }
 - (NSString *)getCurrentTime

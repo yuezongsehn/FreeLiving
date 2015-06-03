@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FMDatabase.h"
 #import "AccountModel.h"
+#import "ConsumeModel.h"
 
 #define dataBasePath [[(NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES)) lastObject]stringByAppendingPathComponent:dataBaseName]
 #define dataBaseName @"dataBase.sqlite"
@@ -57,4 +58,13 @@
 + (BOOL)deleteAccountModel:(NSString *)createTime;
 //更新一条数据
 + (BOOL)updateAccountModel:(AccountModel*)aModel;
+
++ (BOOL)createConsume_Table;
+
++ (BOOL)saveConsumeModel:(ConsumeModel*)aModel;
++ (NSMutableArray *)getAllConsumeModel;
+// 删除某一条数据
++ (BOOL)deleteConsumeModel:(NSString *)createTime;
+//更新一条数据
++ (BOOL)updateConsumeModel:(ConsumeModel*)aModel;
 @end

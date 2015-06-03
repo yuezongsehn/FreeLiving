@@ -9,47 +9,28 @@
 #import "ViewController.h"
 #import "AccountViewController.h"
 #import "PasswordViewController.h"
+#import "ConsumeViewController.h"
 
 #define DELAYEXECUTE(delayTime,func) (dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{func;}))
 
 @interface ViewController ()
 
+@property (nonatomic, strong) NSArray *viewControllerS;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.viewControllerS = @[@"AccountViewController",@"PasswordViewController",@"ConsumeViewController",@"UIViewController"];
 }
 
 #pragma mark - LIVBubbleButtonDelegate -
 
 -(void)livBubbleMenu:(LIVBubbleMenu *)bubbleMenu tappedBubbleWithIndex:(NSUInteger)index {
-    switch (index) {
-        case 0:
-        {
-            AccountViewController *viewController = [[AccountViewController alloc] init];
-            [self.navigationController pushViewController:viewController animated:YES];
-            break;
-        }
-        case 1:
-        {
-            PasswordViewController *passwordVC = [[PasswordViewController alloc] init];
-            [self.navigationController pushViewController:passwordVC animated:YES];
-            break;
-        }
-        case 2:
-        {
-            break;
-        }
-        case 3:
-        {
-            break;
-        }
-   
-        default:
-            break;
-    }
+
+    UIViewController *viewController = [[NSClassFromString(self.viewControllerS[index]) alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 -(void)livBubbleMenuDidHide:(LIVBubbleMenu *)bubbleMenu {

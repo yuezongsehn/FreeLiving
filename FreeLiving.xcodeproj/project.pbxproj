@@ -31,6 +31,9 @@
 		5ED2C7A61B1CB4EE00F1E978 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2C7A51B1CB4EE00F1E978 /* AccountViewController.m */; };
 		5EED308B1B1ABAB300A9F68C /* AuthenticateObjec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EED308A1B1ABAB300A9F68C /* AuthenticateObjec.m */; };
 		5EED30901B1AC46E00A9F68C /* RandomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EED308F1B1AC46E00A9F68C /* RandomObject.m */; };
+		927CEBB21B1ED07C00A0DC2B /* ConsumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 927CEBB11B1ED07C00A0DC2B /* ConsumeViewController.m */; };
+		927CEBB61B1ED52800A0DC2B /* ConsumeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 927CEBB51B1ED52800A0DC2B /* ConsumeModel.m */; };
+		927CEBBA1B1EE54A00A0DC2B /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 927CEBB91B1EE54A00A0DC2B /* KxMenu.m */; };
 		92A91AAA1B1D62CF00704C66 /* InputText.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AA71B1D62CF00704C66 /* InputText.m */; };
 		92A91AAB1B1D62CF00704C66 /* UIView+XD.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AA91B1D62CF00704C66 /* UIView+XD.m */; };
 		92A91AAE1B1D642000704C66 /* InputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AAD1B1D642000704C66 /* InputTextView.m */; };
@@ -91,6 +94,12 @@
 		5EED308A1B1ABAB300A9F68C /* AuthenticateObjec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticateObjec.m; sourceTree = "<group>"; };
 		5EED308E1B1AC46E00A9F68C /* RandomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomObject.h; sourceTree = "<group>"; };
 		5EED308F1B1AC46E00A9F68C /* RandomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomObject.m; sourceTree = "<group>"; };
+		927CEBB01B1ED07C00A0DC2B /* ConsumeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumeViewController.h; sourceTree = "<group>"; };
+		927CEBB11B1ED07C00A0DC2B /* ConsumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumeViewController.m; sourceTree = "<group>"; };
+		927CEBB41B1ED52800A0DC2B /* ConsumeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumeModel.h; sourceTree = "<group>"; };
+		927CEBB51B1ED52800A0DC2B /* ConsumeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumeModel.m; sourceTree = "<group>"; };
+		927CEBB81B1EE54A00A0DC2B /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		927CEBB91B1EE54A00A0DC2B /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		92A91AA61B1D62CF00704C66 /* InputText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputText.h; sourceTree = "<group>"; };
 		92A91AA71B1D62CF00704C66 /* InputText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputText.m; sourceTree = "<group>"; };
 		92A91AA81B1D62CF00704C66 /* UIView+XD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XD.h"; sourceTree = "<group>"; };
@@ -191,6 +200,7 @@
 				5ED2C7A71B1CB68700F1E978 /* PrefixHeader.pch */,
 				5EBA2BE41B18B0F70091B65D /* Images.xcassets */,
 				5EBA2BE61B18B0F70091B65D /* LaunchScreen.xib */,
+				927CEBAF1B1ED03C00A0DC2B /* ConsumeVC */,
 				5EA1EB271B1DF778003A2F0B /* CreatePassword */,
 				5ED2C7A31B1CB4CB00F1E978 /* AccountVC */,
 				5EBA2BD71B18B0F70091B65D /* Supporting Files */,
@@ -278,6 +288,7 @@
 		5ED2C79E1B1CB26800F1E978 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				927CEBB31B1ED4FF00A0DC2B /* Consume */,
 				5ED2C79F1B1CB28000F1E978 /* Account */,
 			);
 			name = DataModel;
@@ -306,6 +317,7 @@
 		5EED30871B1ABA7700A9F68C /* CustomModule */ = {
 			isa = PBXGroup;
 			children = (
+				927CEBB71B1EE52D00A0DC2B /* KxMenu */,
 				92A91AB21B1DACA700704C66 /* DesEncrypt */,
 				5ED2C79A1B1CAF7D00F1E978 /* FMDB */,
 				5EED308C1B1AC44C00A9F68C /* Random */,
@@ -330,6 +342,33 @@
 				5EED308F1B1AC46E00A9F68C /* RandomObject.m */,
 			);
 			name = Random;
+			sourceTree = "<group>";
+		};
+		927CEBAF1B1ED03C00A0DC2B /* ConsumeVC */ = {
+			isa = PBXGroup;
+			children = (
+				927CEBB01B1ED07C00A0DC2B /* ConsumeViewController.h */,
+				927CEBB11B1ED07C00A0DC2B /* ConsumeViewController.m */,
+			);
+			name = ConsumeVC;
+			sourceTree = "<group>";
+		};
+		927CEBB31B1ED4FF00A0DC2B /* Consume */ = {
+			isa = PBXGroup;
+			children = (
+				927CEBB41B1ED52800A0DC2B /* ConsumeModel.h */,
+				927CEBB51B1ED52800A0DC2B /* ConsumeModel.m */,
+			);
+			name = Consume;
+			sourceTree = "<group>";
+		};
+		927CEBB71B1EE52D00A0DC2B /* KxMenu */ = {
+			isa = PBXGroup;
+			children = (
+				927CEBB81B1EE54A00A0DC2B /* KxMenu.h */,
+				927CEBB91B1EE54A00A0DC2B /* KxMenu.m */,
+			);
+			name = KxMenu;
 			sourceTree = "<group>";
 		};
 		92A91AA41B1D625C00704C66 /* CustomViewClass */ = {
@@ -533,6 +572,7 @@
 				5EBA2BE01B18B0F70091B65D /* ViewController.m in Sources */,
 				92A91AB11B1DA12C00704C66 /* AccountDetailViewController.m in Sources */,
 				5ED2C7A21B1CB2A100F1E978 /* AccountModel.m in Sources */,
+				927CEBB21B1ED07C00A0DC2B /* ConsumeViewController.m in Sources */,
 				5ED23A751B19586B002AEB74 /* TearedView.m in Sources */,
 				5EA1EB2A1B1DF7AF003A2F0B /* PasswordViewController.m in Sources */,
 				5EBA2BDD1B18B0F70091B65D /* AppDelegate.m in Sources */,
@@ -540,7 +580,9 @@
 				5EA1EB2E1B1DFB8B003A2F0B /* APRoundedButton.m in Sources */,
 				5ED2C7A61B1CB4EE00F1E978 /* AccountViewController.m in Sources */,
 				5ED2C79D1B1CAF9C00F1E978 /* DBManager.m in Sources */,
+				927CEBB61B1ED52800A0DC2B /* ConsumeModel.m in Sources */,
 				92A91AAA1B1D62CF00704C66 /* InputText.m in Sources */,
+				927CEBBA1B1EE54A00A0DC2B /* KxMenu.m in Sources */,
 				92A91AB91B1DBC2E00704C66 /* HudFactory.m in Sources */,
 				92A91AAE1B1D642000704C66 /* InputTextView.m in Sources */,
 			);

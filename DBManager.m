@@ -98,6 +98,81 @@ static FMDatabase *shareDataBase = nil;
     }
     return isOk;
 }
+#pragma mark -consume-
++ (BOOL)createConsume_Table
+{
+    BOOL result = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        if ([DBManager isTableExist:@"consume_table"]) {
+            result = YES;
+        }
+        else
+        {
+            NSString *sql = @"CREATE TABLE consume_table (id integer primary key autoincrement,consumedes varchar(64),consumeamount varchar(128),consumetime varchar(64),isimportant varchar(2),consumetype varchar(64))";
+            result = [shareDataBase executeUpdate:sql];
+        }
+        [shareDataBase close];
+    }
+    return result;
+}
+
++ (BOOL)saveConsumeModel:(ConsumeModel*)aModel
+{
+    BOOL isOk = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        isOk = [shareDataBase executeUpdate:
+                @"INSERT INTO consume_table(consumedes,consumeamount,consumetime,isimportant,consumetype)VALUES(?,?,?,?,?)",aModel.consumeDes,aModel.consumeAmount,aModel.consumeTime,aModel.isImportant,aModel.consumeType];
+        aModel.consumeId = [shareDataBase lastInsertRowId];
+        [shareDataBase close];
+    }
+    return isOk;
+}
++ (NSMutableArray *)getAllConsumeModel
+{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        FMResultSet *s = [shareDataBase executeQuery:@"SELECT * FROM consume_table order by id desc"];
+        while ([s next]) {
+            ConsumeModel *aModel = [[ConsumeModel alloc] init];
+            aModel.consumeId = [s intForColumn:@"id"];
+            aModel.consumeDes = [s stringForColumn:@"consumedes"];
+            aModel.consumeAmount = [s stringForColumn:@"consumeamount"];
+            aModel.consumeTime= [s stringForColumn:@"consumeTime"];
+            aModel.isImportant = [s stringForColumn:@"isimportant"];
+            aModel.consumeType = [s stringForColumn:@"consumetype"];
+            [array addObject:aModel];
+        }
+        [shareDataBase close];
+    }
+    return array;
+}
+// 删除某一条数据
++ (BOOL)deleteConsumeModel:(NSString *)createTime
+{
+    BOOL isOk = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        isOk = [shareDataBase executeUpdate:
+                @"delete from consume_table where consumetime = ?",createTime];
+        [shareDataBase close];
+    }
+    return isOk;
+}
+//更新一条数据
++ (BOOL)updateConsumeModel:(ConsumeModel*)aModel
+{
+    BOOL isOk = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        isOk = [shareDataBase executeUpdate:
+                @"update consume_table set accountamount = ? where id = ?",aModel.consumeAmount,[NSString stringWithFormat:@"%ld",(long)aModel.consumeId]];
+        [shareDataBase close];
+    }
+    return isOk;
+}
 #pragma mark -----
 /**
  判断数据库中表是否存在

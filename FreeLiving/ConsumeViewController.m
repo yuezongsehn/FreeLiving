@@ -1,18 +1,18 @@
 //
-//  AccountViewController.m
+//  ConsumeViewController.m
 //  FreeLiving
 //
-//  Created by 岳宗申 on 15/6/1.
+//  Created by 洋景-Yue on 15/6/3.
 //  Copyright (c) 2015年 岳宗申. All rights reserved.
 //
 
-#import "AccountViewController.h"
+#import "ConsumeViewController.h"
 #import "DBManager.h"
-#import "AccountModel.h"
+#import "ConsumeModel.h"
 #import "InputTextView.h"
-#import "AccountDetailViewController.h"
+#import "KxMenu.h"
 
-@interface AccountViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchResultsUpdating,UIActionSheetDelegate>
+@interface ConsumeViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchResultsUpdating,UIActionSheetDelegate>
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) UITableView *tableView;
@@ -21,18 +21,20 @@
 @property (strong,nonatomic) NSMutableArray  *searchList;
 
 @property (nonatomic, strong) InputTextView *inputView;
+
+@property (nonatomic, assign) NSInteger consumeTyple;
 @end
 
-@implementation AccountViewController
+@implementation ConsumeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"账号密码";
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAccountModel)];
+    self.title = @"消费记录";
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addConsumeModel:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    if ([DBManager createAccount_Table]) {
-        self.dataList = [DBManager getAllAccountModel];
+    if ([DBManager createConsume_Table]) {
+        self.dataList = [DBManager getAllConsumeModel];
     }
     else
     {
@@ -46,10 +48,38 @@
 }
 #pragma mark -private methods-
 //添加数据
-- (void)addAccountModel
+- (void)addInputTextView
 {
     [self.view addSubview:self.inputView];
     [self.inputView createInputView];
+}
+- (void)addConsumeModel:(UIBarButtonItem *)sender
+{
+    NSArray *menuItems =
+    @[
+      [KxMenuItem menuItem:@"收入"
+                     image:nil
+                    target:self
+                    action:@selector(consumeStyleValue1)],
+      
+      [KxMenuItem menuItem:@"支出"
+                     image:nil
+                    target:self
+                    action:@selector(consumeStyleValue2)],
+      ];
+    [KxMenu showMenuInView:self.view
+                  fromRect:CGRectMake(CGRectGetWidth(self.view.frame)-75, 26, 70, 40)
+                 menuItems:menuItems];
+}
+- (void)consumeStyleValue1
+{
+    self.consumeTyple = 1;
+    [self addInputTextView];
+}
+- (void)consumeStyleValue2
+{
+   self.consumeTyple = 2;
+    [self addInputTextView];
 }
 #pragma mark -UITableViewDataSource-
 
@@ -63,22 +93,24 @@
 }
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellId = @"mycell";
+    static NSString *cellId = @"myConsumeCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
         cell.detailTextLabel.textColor = [UIColor lightGrayColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    AccountModel *aModel = nil;
+    ConsumeModel *aModel = nil;
     if (self.searchController.active) {
         aModel = self.searchList[indexPath.row];
     }
     else{
         aModel = self.dataList[indexPath.row];
     }
-    [cell.textLabel setText:aModel.accountString];
-    [cell.detailTextLabel setText:aModel.createTime];
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@         %@ 元",aModel.consumeDes,aModel.consumeAmount]];
+    [cell.detailTextLabel setText:aModel.consumeTime];
+
     if ([aModel.isImportant integerValue] == 1) {
         cell.imageView.image = [UIImage imageNamed:@"hw_fore_stars"];
     }
@@ -95,7 +127,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"确定要删除此分类下的所有账户信息么" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除" otherButtonTitles:nil,nil];
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"确定要删除此分类下的所有消费信息么" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除" otherButtonTitles:nil,nil];
         [actionSheet showInView:self.view];
         actionSheet.tag = indexPath.row;
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -106,20 +138,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.searchController.active) {
-        self.searchController.active = NO;
-    }
-    AccountModel *aModel = nil;
-    if (self.searchController.active) {
-        aModel = self.searchList[indexPath.row];
-    }
-    else{
-        aModel = self.dataList[indexPath.row];
-    }
-    AccountDetailViewController *detailVC = [[AccountDetailViewController alloc] init];
-    detailVC.detailModel = aModel;
-    [self.navigationController pushViewController:detailVC animated:YES];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    if (self.searchController.active) {
+//        self.searchController.active = NO;
+//    }
+//    ConsumeModel *aModel = nil;
+//    if (self.searchController.active) {
+//        aModel = self.searchList[indexPath.row];
+//    }
+//    else{
+//        aModel = self.dataList[indexPath.row];
+//    }
+////    AccountDetailViewController *detailVC = [[AccountDetailViewController alloc] init];
+////    detailVC.detailModel = aModel;
+////    [self.navigationController pushViewController:detailVC animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 #pragma mark -UIActionSheetDelegate-
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -127,8 +159,8 @@
     [self setEditing:NO];
     if (buttonIndex == 0) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:actionSheet.tag inSection:0];
-        AccountModel *aModel = self.dataList[indexPath.row];
-        if ([DBManager deleteAccountModel:aModel.createTime]) {
+        ConsumeModel *aModel = self.dataList[indexPath.row];
+        if ([DBManager deleteConsumeModel:aModel.consumeTime]) {
             [self.dataList removeObjectAtIndex:indexPath.row];
             [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }
@@ -145,7 +177,7 @@
     
     NSString *searchString = [self.searchController.searchBar text];
     
-    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"accountString CONTAINS[c] %@", searchString];
+    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"consumeDes CONTAINS[c] %@", searchString];
     
     if (self.searchList!= nil) {
         [self.searchList removeAllObjects];
@@ -176,7 +208,7 @@
         
         _searchController.dimsBackgroundDuringPresentation = NO;
         _searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
-        _searchController.searchBar.placeholder = @"输入账号";
+        _searchController.searchBar.placeholder = @"输入消费关键字";
         self.tableView.tableHeaderView = _searchController.searchBar;
     }
     return _searchController;
@@ -184,22 +216,23 @@
 - (InputTextView *)inputView
 {
     if (_inputView == nil) {
-        _inputView = [[InputTextView alloc] initWithFrame:self.view.frame inputStyle:0];
+        _inputView = [[InputTextView alloc] initWithFrame:self.view.frame inputStyle:self.consumeTyple];
         _inputView.backgroundColor = [UIColor colorWithRed:0x20/255.0 green:0x1d/255.0 blue:0x1e/255.0 alpha:0.4];
         _inputView.removeInputViewAcion = ^(void)
         {
             _inputView = nil;
         };
-        __weak AccountViewController *weakSelf = self;
-        _inputView.addAccountModelAction = ^(AccountModel *aModel)
+        __weak ConsumeViewController *weakSelf = self;
+        _inputView.addAccountModelAction = ^(ConsumeModel * aModel)
         {
             [weakSelf.dataList insertObject:aModel atIndex:0];
             [weakSelf.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-            [DBManager saveAccountModel:aModel];
+            [DBManager saveConsumeModel:aModel];
         };
     }
     return _inputView;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
