@@ -28,7 +28,7 @@
 #pragma mark - LIVBubbleButtonDelegate -
 
 -(void)livBubbleMenu:(LIVBubbleMenu *)bubbleMenu tappedBubbleWithIndex:(NSUInteger)index {
-
+    [self removeBubbleMenuView];
     UIViewController *viewController = [[NSClassFromString(self.viewControllerS[index]) alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }

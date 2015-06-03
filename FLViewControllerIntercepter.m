@@ -46,7 +46,7 @@
 #pragma mark - fake methods
 - (void)loadView:(UIViewController *)viewController
 {
-    viewController.view.backgroundColor = [UIColor whiteColor];
+    viewController.view.backgroundColor = [UIColor whiteColor]; 
 
 //    viewController.view.backgroundColor = [UIColor colorWithRed:0x4f/255.0 green:0xc5/255.0 blue:0x6e/255.0 alpha:1.0];
 }
