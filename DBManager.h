@@ -10,6 +10,7 @@
 #import "FMDatabase.h"
 #import "AccountModel.h"
 #import "ConsumeModel.h"
+#import "NoteModel.h"
 
 #define dataBasePath [[(NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES)) lastObject]stringByAppendingPathComponent:dataBaseName]
 #define dataBaseName @"dataBase.sqlite"
@@ -50,6 +51,7 @@
  *
  *	@return
  */
+#pragma mark -accountTable-
 + (BOOL)createAccount_Table;
 
 + (BOOL)saveAccountModel:(AccountModel*)aModel;
@@ -59,6 +61,7 @@
 //更新一条数据
 + (BOOL)updateAccountModel:(AccountModel*)aModel;
 
+#pragma mark -consumeTable-
 + (BOOL)createConsume_Table;
 
 + (BOOL)saveConsumeModel:(ConsumeModel*)aModel;
@@ -67,4 +70,14 @@
 + (BOOL)deleteConsumeModel:(NSString *)createTime;
 //更新一条数据
 + (BOOL)updateConsumeModel:(ConsumeModel*)aModel;
+
+#pragma mark -noteTable-
++ (BOOL)createNote_Table;
+
++ (BOOL)saveNoteModel:(NoteModel*)aModel;
++ (NSMutableArray *)getAllNoteModel;
+// 删除某一条数据
++ (BOOL)deleteNoteModel:(NSInteger)noteId;
+//更新一条数据
++ (BOOL)updateNoteModel:(NoteModel*)aModel;
 @end

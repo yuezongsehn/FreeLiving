@@ -173,6 +173,83 @@ static FMDatabase *shareDataBase = nil;
     }
     return isOk;
 }
+#pragma mark -NoteTable-
+
++ (BOOL)createNote_Table
+{
+    BOOL result = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        if ([DBManager isTableExist:@"note_table"]) {
+            result = YES;
+        }
+        else
+        {
+            NSString *sql = @"CREATE TABLE note_table (id integer primary key autoincrement,notetext varchar(1024),notetime varchar(64),isimportant varchar(2),notetype varchar(64))";
+            result = [shareDataBase executeUpdate:sql];
+        }
+        [shareDataBase close];
+    }
+    return result;
+}
+
++ (BOOL)saveNoteModel:(NoteModel*)aModel
+{
+    BOOL isOk = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        isOk = [shareDataBase executeUpdate:
+                @"INSERT INTO note_table(notetext,notetime,isimportant,notetype)VALUES(?,?,?,?)",aModel.noteText,aModel.noteTime,aModel.isImportant,aModel.noteType];
+        aModel.noteId = [shareDataBase lastInsertRowId];
+        [shareDataBase close];
+    }
+    return isOk;
+  
+}
++ (NSMutableArray *)getAllNoteModel
+{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        FMResultSet *s = [shareDataBase executeQuery:@"SELECT * FROM note_table order by id desc"];
+        while ([s next]) {
+            NoteModel *aModel = [[NoteModel alloc] init];
+            aModel.noteId = [s intForColumn:@"id"];
+            aModel.noteText = [s stringForColumn:@"notetext"];
+            aModel.noteTime= [s stringForColumn:@"notetime"];
+            aModel.isImportant = [s stringForColumn:@"isimportant"];
+            aModel.noteType = [s stringForColumn:@"notetype"];
+            [array addObject:aModel];
+        }
+        [shareDataBase close];
+    }
+    return array;
+}
+// 删除某一条数据
++ (BOOL)deleteNoteModel:(NSInteger)noteId
+{
+    BOOL isOk = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        isOk = [shareDataBase executeUpdate:
+                @"delete from note_table where id = ?",[NSString stringWithFormat:@"%ld",noteId]];
+        [shareDataBase close];
+    }
+    return isOk;
+  
+}
+//更新一条数据
++ (BOOL)updateNoteModel:(NoteModel*)aModel
+{
+    BOOL isOk = NO;
+    shareDataBase = [DBManager createDataBase];
+    if ([shareDataBase open]) {
+        isOk = [shareDataBase executeUpdate:
+                @"update note_table set notetext = ? where id = ?",aModel.noteText,[NSString stringWithFormat:@"%ld",(long)aModel.noteId]];
+        [shareDataBase close];
+    }
+    return isOk;
+}
 #pragma mark -----
 /**
  判断数据库中表是否存在

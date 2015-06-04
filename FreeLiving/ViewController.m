@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+
 #import "AccountViewController.h"
 #import "PasswordViewController.h"
 #import "ConsumeViewController.h"
+#import "NoteViewController.h"
 
 #define DELAYEXECUTE(delayTime,func) (dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{func;}))
 
@@ -22,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.viewControllerS = @[@"AccountViewController",@"PasswordViewController",@"ConsumeViewController",@"UIViewController"];
+    self.viewControllerS = @[@"AccountViewController",@"PasswordViewController",@"ConsumeViewController",@"NoteViewController"];
 }
 
 #pragma mark - LIVBubbleButtonDelegate -

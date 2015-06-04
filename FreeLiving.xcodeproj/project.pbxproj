@@ -40,6 +40,14 @@
 		92A91AB11B1DA12C00704C66 /* AccountDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AB01B1DA12C00704C66 /* AccountDetailViewController.m */; };
 		92A91AB51B1DACCA00704C66 /* DesEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AB41B1DACCA00704C66 /* DesEncrypt.m */; };
 		92A91AB91B1DBC2E00704C66 /* HudFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A91AB81B1DBC2E00704C66 /* HudFactory.m */; };
+		92D3509A1B20194D00EE2669 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D350991B20194D00EE2669 /* NoteViewController.m */; };
+		92D3509D1B2024EC00EE2669 /* NoteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D3509C1B2024EC00EE2669 /* NoteScrollView.m */; };
+		92D350A11B20262A00EE2669 /* InScrollViewLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D350A01B20262A00EE2669 /* InScrollViewLayer.m */; };
+		92D350A51B2028F300EE2669 /* NoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D350A41B2028F300EE2669 /* NoteModel.m */; };
+		92D350A71B202D0700EE2669 /* notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 92D350A61B202D0700EE2669 /* notepad.png */; };
+		92D350AA1B20342B00EE2669 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D350A91B20342B00EE2669 /* UIView+Screenshot.m */; };
+		92D350AD1B20348C00EE2669 /* AddNewNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D350AC1B20348C00EE2669 /* AddNewNoteViewController.m */; };
+		92D350B31B203A0C00EE2669 /* NoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D350B21B203A0C00EE2669 /* NoteDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +120,21 @@
 		92A91AB41B1DACCA00704C66 /* DesEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesEncrypt.m; sourceTree = "<group>"; };
 		92A91AB71B1DBC2E00704C66 /* HudFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudFactory.h; sourceTree = "<group>"; };
 		92A91AB81B1DBC2E00704C66 /* HudFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudFactory.m; sourceTree = "<group>"; };
+		92D350981B20194D00EE2669 /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		92D350991B20194D00EE2669 /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		92D3509B1B2024EC00EE2669 /* NoteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteScrollView.h; sourceTree = "<group>"; };
+		92D3509C1B2024EC00EE2669 /* NoteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteScrollView.m; sourceTree = "<group>"; };
+		92D3509F1B20262A00EE2669 /* InScrollViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InScrollViewLayer.h; sourceTree = "<group>"; };
+		92D350A01B20262A00EE2669 /* InScrollViewLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InScrollViewLayer.m; sourceTree = "<group>"; };
+		92D350A31B2028F300EE2669 /* NoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteModel.h; sourceTree = "<group>"; };
+		92D350A41B2028F300EE2669 /* NoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteModel.m; sourceTree = "<group>"; };
+		92D350A61B202D0700EE2669 /* notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notepad.png; sourceTree = "<group>"; };
+		92D350A81B20342B00EE2669 /* UIView+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Screenshot.h"; sourceTree = "<group>"; };
+		92D350A91B20342B00EE2669 /* UIView+Screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Screenshot.m"; sourceTree = "<group>"; };
+		92D350AB1B20348C00EE2669 /* AddNewNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewNoteViewController.h; sourceTree = "<group>"; };
+		92D350AC1B20348C00EE2669 /* AddNewNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewNoteViewController.m; sourceTree = "<group>"; };
+		92D350B11B203A0C00EE2669 /* NoteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDetailViewController.h; sourceTree = "<group>"; };
+		92D350B21B203A0C00EE2669 /* NoteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDetailViewController.m; sourceTree = "<group>"; };
 		985B3C2FCD62C62CC791EDD5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AB5204D5ECFD7C3065ABDE17 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B174465890808934599B68C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,13 +168,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5EA1EB271B1DF778003A2F0B /* CreatePassword */ = {
+		5EA1EB271B1DF778003A2F0B /* CreatePasswordVC */ = {
 			isa = PBXGroup;
 			children = (
 				5EA1EB281B1DF7AF003A2F0B /* PasswordViewController.h */,
 				5EA1EB291B1DF7AF003A2F0B /* PasswordViewController.m */,
 			);
-			name = CreatePassword;
+			name = CreatePasswordVC;
 			sourceTree = "<group>";
 		};
 		5EA1EB2B1B1DFB75003A2F0B /* RoundedButton */ = {
@@ -200,8 +223,9 @@
 				5ED2C7A71B1CB68700F1E978 /* PrefixHeader.pch */,
 				5EBA2BE41B18B0F70091B65D /* Images.xcassets */,
 				5EBA2BE61B18B0F70091B65D /* LaunchScreen.xib */,
+				92D350971B20193600EE2669 /* NoteVC */,
 				927CEBAF1B1ED03C00A0DC2B /* ConsumeVC */,
-				5EA1EB271B1DF778003A2F0B /* CreatePassword */,
+				5EA1EB271B1DF778003A2F0B /* CreatePasswordVC */,
 				5ED2C7A31B1CB4CB00F1E978 /* AccountVC */,
 				5EBA2BD71B18B0F70091B65D /* Supporting Files */,
 			);
@@ -242,6 +266,7 @@
 				5EBA2BFE1B18BDB20091B65D /* IMG_2093.JPG */,
 				5EBA2C021B18BDB20091B65D /* IMG_2094.JPG */,
 				5EBA2C011B18BDB20091B65D /* IMG_2095.JPG */,
+				92D350A61B202D0700EE2669 /* notepad.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -260,6 +285,8 @@
 		5ED23A681B19532F002AEB74 /* Categorys */ = {
 			isa = PBXGroup;
 			children = (
+				92D350A81B20342B00EE2669 /* UIView+Screenshot.h */,
+				92D350A91B20342B00EE2669 /* UIView+Screenshot.m */,
 				5ED23A691B1953D9002AEB74 /* UIImage+SplitImageIntoTwoParts.h */,
 				5ED23A6A1B1953D9002AEB74 /* UIImage+SplitImageIntoTwoParts.m */,
 			);
@@ -288,6 +315,7 @@
 		5ED2C79E1B1CB26800F1E978 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				92D350A21B2028DD00EE2669 /* Note */,
 				927CEBB31B1ED4FF00A0DC2B /* Consume */,
 				5ED2C79F1B1CB28000F1E978 /* Account */,
 			);
@@ -374,6 +402,7 @@
 		92A91AA41B1D625C00704C66 /* CustomViewClass */ = {
 			isa = PBXGroup;
 			children = (
+				92D3509E1B2024F700EE2669 /* NoteView */,
 				5EA1EB2B1B1DFB75003A2F0B /* RoundedButton */,
 				92A91AB61B1DBC1800704C66 /* HudFactory */,
 				5ED23A721B1957EE002AEB74 /* TearView */,
@@ -412,6 +441,39 @@
 				92A91AB81B1DBC2E00704C66 /* HudFactory.m */,
 			);
 			name = HudFactory;
+			sourceTree = "<group>";
+		};
+		92D350971B20193600EE2669 /* NoteVC */ = {
+			isa = PBXGroup;
+			children = (
+				92D350981B20194D00EE2669 /* NoteViewController.h */,
+				92D350991B20194D00EE2669 /* NoteViewController.m */,
+				92D350AB1B20348C00EE2669 /* AddNewNoteViewController.h */,
+				92D350AC1B20348C00EE2669 /* AddNewNoteViewController.m */,
+				92D350B11B203A0C00EE2669 /* NoteDetailViewController.h */,
+				92D350B21B203A0C00EE2669 /* NoteDetailViewController.m */,
+			);
+			name = NoteVC;
+			sourceTree = "<group>";
+		};
+		92D3509E1B2024F700EE2669 /* NoteView */ = {
+			isa = PBXGroup;
+			children = (
+				92D3509B1B2024EC00EE2669 /* NoteScrollView.h */,
+				92D3509C1B2024EC00EE2669 /* NoteScrollView.m */,
+				92D3509F1B20262A00EE2669 /* InScrollViewLayer.h */,
+				92D350A01B20262A00EE2669 /* InScrollViewLayer.m */,
+			);
+			name = NoteView;
+			sourceTree = "<group>";
+		};
+		92D350A21B2028DD00EE2669 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				92D350A31B2028F300EE2669 /* NoteModel.h */,
+				92D350A41B2028F300EE2669 /* NoteModel.m */,
+			);
+			name = Note;
 			sourceTree = "<group>";
 		};
 		BF683C8E3527C3EE22FCC14C /* Frameworks */ = {
@@ -510,6 +572,7 @@
 				5EBA2C041B18BDB20091B65D /* IMG_2091.JPG in Resources */,
 				5EBA2BE81B18B0F70091B65D /* LaunchScreen.xib in Resources */,
 				5EBA2BE51B18B0F70091B65D /* Images.xcassets in Resources */,
+				92D350A71B202D0700EE2669 /* notepad.png in Resources */,
 				5EBA2C071B18BDB20091B65D /* IMG_2094.JPG in Resources */,
 				5EBA2C061B18BDB20091B65D /* IMG_2095.JPG in Resources */,
 			);
@@ -565,12 +628,17 @@
 				5EED308B1B1ABAB300A9F68C /* AuthenticateObjec.m in Sources */,
 				92A91AB51B1DACCA00704C66 /* DesEncrypt.m in Sources */,
 				5ED23A6E1B195418002AEB74 /* Aspects.m in Sources */,
+				92D350AD1B20348C00EE2669 /* AddNewNoteViewController.m in Sources */,
 				5ED23A6B1B1953D9002AEB74 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
+				92D350B31B203A0C00EE2669 /* NoteDetailViewController.m in Sources */,
+				92D3509A1B20194D00EE2669 /* NoteViewController.m in Sources */,
 				5ED23A711B1954C4002AEB74 /* FLViewControllerIntercepter.m in Sources */,
 				92A91AAB1B1D62CF00704C66 /* UIView+XD.m in Sources */,
 				5EED30901B1AC46E00A9F68C /* RandomObject.m in Sources */,
+				92D350AA1B20342B00EE2669 /* UIView+Screenshot.m in Sources */,
 				5EBA2BE01B18B0F70091B65D /* ViewController.m in Sources */,
 				92A91AB11B1DA12C00704C66 /* AccountDetailViewController.m in Sources */,
+				92D350A51B2028F300EE2669 /* NoteModel.m in Sources */,
 				5ED2C7A21B1CB2A100F1E978 /* AccountModel.m in Sources */,
 				927CEBB21B1ED07C00A0DC2B /* ConsumeViewController.m in Sources */,
 				5ED23A751B19586B002AEB74 /* TearedView.m in Sources */,
@@ -581,8 +649,10 @@
 				5ED2C7A61B1CB4EE00F1E978 /* AccountViewController.m in Sources */,
 				5ED2C79D1B1CAF9C00F1E978 /* DBManager.m in Sources */,
 				927CEBB61B1ED52800A0DC2B /* ConsumeModel.m in Sources */,
+				92D350A11B20262A00EE2669 /* InScrollViewLayer.m in Sources */,
 				92A91AAA1B1D62CF00704C66 /* InputText.m in Sources */,
 				927CEBBA1B1EE54A00A0DC2B /* KxMenu.m in Sources */,
+				92D3509D1B2024EC00EE2669 /* NoteScrollView.m in Sources */,
 				92A91AB91B1DBC2E00704C66 /* HudFactory.m in Sources */,
 				92A91AAE1B1D642000704C66 /* InputTextView.m in Sources */,
 			);
