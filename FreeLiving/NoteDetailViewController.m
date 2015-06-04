@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"笔记详情";
     UIBarButtonItem *item =
     [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(close:)];
     self.navigationItem.leftBarButtonItem = item;

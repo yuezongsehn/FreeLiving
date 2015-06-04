@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"新增笔记";
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveNote)];
     self.navigationItem.rightBarButtonItem = saveButton;
     
